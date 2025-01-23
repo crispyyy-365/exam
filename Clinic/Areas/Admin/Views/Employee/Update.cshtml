@@ -1,0 +1,59 @@
+﻿@model UpdateEmployeeVm
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Employee</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <img style="width:150px;height:150px" src="~/assets/img/@Model.Image" />
+                            <input asp-for="Image" class="form-control" type="hidden" />
+                        </div>
+                        <label asp-for="Image">Image</label>
+                        <input asp-for="Image" class="form-control" placeholder="Image" accept="image/*">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Surname">Surname</label>
+                        <input asp-for="Surname" class="form-control" placeholder="Surname">
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Profession">Profession</label>
+                        <input asp-for="Profession" class="form-control" placeholder="Profession">
+                        <span asp-validation-for="Profession" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Twitter">Twitter</label>
+                        <input asp-for="Twitter" class="form-control" placeholder="Twitter">
+                        <span asp-validation-for="Twitter" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FaceBook">FaceBook</label>
+                        <input asp-for="FaceBook" class="form-control" placeholder="FaceBook">
+                        <span asp-validation-for="FaceBook" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Instagram">Instagram</label>
+                        <input asp-for="Instagram" class="form-control" placeholder="Instagram">
+                        <span asp-validation-for="Instagram" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Order">Order</label>
+                        <input asp-for="Order" class="form-control" placeholder="Order">
+                        <span asp-validation-for="Order" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button asp-action="index" class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

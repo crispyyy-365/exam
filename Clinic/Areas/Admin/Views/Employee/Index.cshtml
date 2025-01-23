@@ -1,0 +1,71 @@
+﻿@model List<GetEmployeeVm>
+@{
+    int count = 0;
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Employee Table</h4>
+                <div class="table-responsive">
+                    <a asp-action="create" class="btn btn-succes">Create</a>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No
+                                </th>
+                                <th>
+                                    Image
+                                </th>
+                                <th>
+                                    Name 
+                                </th>
+                                <th>
+                                    Surname 
+                                </th>
+                                <th>
+                                    Profession
+                                </th>
+                                <th>
+                                    Order
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(GetEmployeeVm employeeVm in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>
+                                        <p>@count</p>
+                                    </td>
+                                    <td class="py-1">
+                                        <img src="~/assets/img/@employeeVm.Image" alt="image" />
+                                    </td>
+                                    <td>
+                                        <p>@employeeVm.Name</p>
+                                    </td>
+                                    <td>
+                                        <p>@employeeVm.Surname</p>
+                                    </td>
+                                    <td>
+                                        <p>@employeeVm.Profession</p>
+                                    </td>
+                                    <td>
+                                        <p>@employeeVm.Order</p>
+                                    </td>
+                                    <td>
+                                        <a asp-action="update" asp-route-id="@employeeVm.Id" class="btn btn-warning btn-info"><i class="mdi mdi-pencil"></i></a>
+                                        <a asp-action="delete" asp-route-id="@employeeVm.Id" class="btn btn-danger btn-info"><i class="mdi mdi-delete"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
